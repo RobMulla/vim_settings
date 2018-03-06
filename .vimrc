@@ -74,6 +74,11 @@ nmap <leader>w :w!<cr>
 command W w !sudo tee % > /dev/null
 
 
+" pathogen.vim
+"
+execute pathogen#infect()
+
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

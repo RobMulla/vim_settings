@@ -305,3 +305,6 @@ bind -n WheelUpPane if-shell -F -t = "#{mouse_any_flag}" "send-keys -M" "if -Ft=
 # This is annoying when I go to a new tab I type "clear" and it creates a new tab
 unbind-key c
 bind-key t new-window
+
+# Unbind C-b e from editing tmux. Annoying when typing "exit"
+unbind-key e

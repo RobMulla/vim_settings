@@ -300,3 +300,11 @@ set -g mouse on
 # to enable mouse scroll, see https://github.com/tmux/tmux/issues/145#issuecomment-150736967
 bind -n WheelUpPane if-shell -F -t = "#{mouse_any_flag}" "send-keys -M" "if -Ft= '#{pane_in_mode}' 'send-keys -M' 'copy-mode -e'"
 
+
+# Unbind C-b c that creates new tab instead make it C-b t
+# This is annoying when I go to a new tab I type "clear" and it creates a new tab
+unbind-key c
+bind-key t new-window
+
+# Unbind C-b e from editing tmux. Annoying when typing "exit"
+unbind-key e

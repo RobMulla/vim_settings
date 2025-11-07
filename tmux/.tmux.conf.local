@@ -320,7 +320,7 @@ tmux_conf_theme_clock_style="24"
 #   - false (default)
 # on macOS, this requires installing reattach-to-user-namespace, see README.md
 # on Linux, this requires xsel or xclip
-tmux_conf_copy_to_os_clipboard=True
+tmux_conf_copy_to_os_clipboard=true
 
 
 # -- user customizations -------------------------------------------------------
@@ -423,6 +423,11 @@ tmux_conf_update_plugins_on_reload=true
 #
 # then, use #{foo} in e.g. the 'tmux_conf_theme_status_left' or the
 # 'tmux_conf_theme_status_right' variables.
+
+# -- Linux specific clipboard fix ----------------------------------------------
+# Use xclip for clipboard on Linux.
+if-shell 'test "$(uname)" = "Linux"' "bind-key -T copy-mode-vi y send -X copy-pipe-and-cancel 'xclip -i -selection clipboard >/dev/null 2>&1'"
+
 
 # # /!\ do not remove the following line
 # EOF
